@@ -1,6 +1,11 @@
 import React, { createContext, useState } from "react";
-import { fbAddTask, fbGetTasks, fbUpdateTask } from "../services/firebase";
-
+import {
+  fbAddTask,
+  fbGetTasks,
+  fbUpdateTask,
+  fbDeleteTask,
+} from "../services/firebase";
+import { v4 as uuidv4 } from "uuid";
 const TaskContext = createContext();
 export default TaskContext;
 
@@ -18,6 +23,7 @@ export const TaskProvider = ({ children }) => {
       setTasks([
         ...tasks,
         {
+          id: uuidv4(),
           task,
           complete: false,
         },
@@ -35,13 +41,25 @@ export const TaskProvider = ({ children }) => {
     });
   }
 
+  async function deleteTask(foundTask) {
+    let newArray = tasks.filter((task) => task != foundTask);
+    setTasks(() => [...newArray]);
+    await fbDeleteTask(foundTask).then(() => {
+      //todo: update the task in the local state that was deleted
+      console.log(foundTask);
+
+      // setTasks(() => [...tasks]);
+    });
+  }
   return (
     <TaskContext.Provider
       value={{
         tasks: tasks,
+        setTasks,
         getTasks,
         addTask,
         updateTask,
+        deleteTask,
       }}
     >
       {children}

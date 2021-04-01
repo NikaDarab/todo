@@ -99,3 +99,14 @@ export const fbGetTasks = async (userID) => {
       });
   });
 };
+
+export const fbDeleteTask = async (task) => {
+  return new Promise(function (resolve, reject) {
+    db.collection("tasks")
+      .doc(task.id)
+      .delete()
+      .then(() => {
+        resolve();
+      });
+  });
+};

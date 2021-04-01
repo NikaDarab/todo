@@ -12,7 +12,14 @@ function TaskList() {
   };
   const [newTask, setNewTask] = useState(false);
   const [task, setTask] = useState(emptyTask);
-  const { tasks, addTask, updateTask, getTasks } = useContext(TaskContext);
+  let {
+    setTasks,
+    tasks,
+    addTask,
+    updateTask,
+    getTasks,
+    deleteTask,
+  } = useContext(TaskContext);
 
   useEffect(() => {
     getTasks(user.uid);
@@ -22,7 +29,11 @@ function TaskList() {
     task.task.completed = !task.task.completed;
     updateTask(task);
   };
-
+  const handleDelete = (taskId) => {
+    let foundTask = tasks.find((task) => task.id === taskId);
+    // console.log(deletedTask);
+    deleteTask(foundTask);
+  };
   const saveTask = () => {
     addTask(task).then(() => cancelTask(/*complete the cancel task todo*/));
   };
@@ -118,6 +129,7 @@ function TaskList() {
                   checked={task.task.completed}
                   onChange={() => updateCompleted(task)}
                 />
+                <button onClick={() => handleDelete(task.id)}>delete</button>
               </td>
             </tr>
           ))}

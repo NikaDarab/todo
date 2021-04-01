@@ -1,7 +1,7 @@
 import firebase from "firebase";
 require("firebase/firestore");
 var firebaseConfig = {
-  apiKey: "AIzaSyCvxnlVq0DmWu9Z3rHdwH5kNSxwzfv3nMM",
+  apiKey: process.env.apiKey,
   authDomain: "blueroof-todo.firebaseapp.com",
   projectId: "blueroof-todo",
   storageBucket: "blueroof-todo.appspot.com",

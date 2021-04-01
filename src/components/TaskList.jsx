@@ -12,14 +12,9 @@ function TaskList() {
   };
   const [newTask, setNewTask] = useState(false);
   const [task, setTask] = useState(emptyTask);
-  let {
-    setTasks,
-    tasks,
-    addTask,
-    updateTask,
-    getTasks,
-    deleteTask,
-  } = useContext(TaskContext);
+  let { tasks, addTask, updateTask, getTasks, deleteTask } = useContext(
+    TaskContext
+  );
 
   useEffect(() => {
     getTasks(user.uid);
@@ -45,7 +40,7 @@ function TaskList() {
   };
   // todo: update the task state with these variables
   const handleCategoryChange = (e) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
     let updateCateogryEmptyTask = {
       category: value,
       name: task.name,
@@ -56,7 +51,7 @@ function TaskList() {
     // console.log(task);
   };
   const handleNameChange = (e) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
     let updateNameEmptyTask = {
       category: task.category,
       name: value,
@@ -68,7 +63,7 @@ function TaskList() {
   };
 
   return (
-    <div className="TaskList">
+    <div className="TaskList ">
       <button
         onClick={() => {
           setNewTask(!newTask);

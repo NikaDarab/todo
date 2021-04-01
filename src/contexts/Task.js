@@ -42,13 +42,11 @@ export const TaskProvider = ({ children }) => {
   }
 
   async function deleteTask(foundTask) {
-    let newArray = tasks.filter((task) => task != foundTask);
+    let newArray = tasks.filter((task) => task !== foundTask);
     setTasks(() => [...newArray]);
     await fbDeleteTask(foundTask).then(() => {
       //todo: update the task in the local state that was deleted
       console.log(foundTask);
-
-      // setTasks(() => [...tasks]);
     });
   }
   return (

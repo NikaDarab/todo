@@ -3,7 +3,7 @@ import TaskContext from "../contexts/Task";
 import AuthContext from "../contexts/Auth";
 
 function TaskList() {
-  const { user, logout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   let emptyTask = {
     category: "",
     name: "",
@@ -73,18 +73,17 @@ function TaskList() {
           {!newTask ? (
             <i className="fas fa-plus fa-2x add"></i>
           ) : (
-            <i class="fas fa-times fa-2x"></i>
+            <i className="fas fa-times fa-2x"></i>
           )}
         </div>
         <div style={{ padding: "0 100px" }} onClick={() => setList(!showList)}>
           {!showList ? (
-            <i class="fas fa-eye fa-2x add"></i>
+            <i className="fas fa-eye fa-2x add"></i>
           ) : (
-            <i class="fas fa-eye-slash fa-2x"></i>
+            <i className="fas fa-eye-slash fa-2x"></i>
           )}
         </div>
       </div>
-      {/* <i class="fas fa-eye fa-2x add"></i> */}
 
       <div>
         {newTask && (

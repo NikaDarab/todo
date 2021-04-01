@@ -8,9 +8,9 @@ const Login = () => {
 
   return (
     <div className="login-form">
-      {/* <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         {createAccount ? "Create Account" : "Login"}
-      </div> */}
+      </div>
       <div>
         <input
           className="login-input"
@@ -31,6 +31,7 @@ const Login = () => {
       <button className="btn-log" onClick={() => login(email, password)}>
         Login
       </button>
+
       <button
         className="btn-create"
         onClick={() => createAccount(email, password)}

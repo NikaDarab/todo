@@ -1,6 +1,5 @@
 import firebase from "firebase";
 require("firebase/firestore");
-
 var firebaseConfig = {
   apiKey: "AIzaSyCvxnlVq0DmWu9Z3rHdwH5kNSxwzfv3nMM",
   authDomain: "blueroof-todo.firebaseapp.com",
@@ -10,6 +9,7 @@ var firebaseConfig = {
   appId: "1:284476566906:web:f9bed555dfafad24c3fac3",
   measurementId: "G-MQ3SP102ZT",
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
@@ -27,7 +27,7 @@ export const fbCreateAccount = async (email, password) => {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorCode);
       });
   });
 };
@@ -43,6 +43,8 @@ export const fbLogin = async (email, password) => {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+
+        alert(errorCode);
         // ..
       });
   });
@@ -59,6 +61,8 @@ export const fbLogout = async () => {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+        console.log(errorMessage);
+        alert(errorCode);
         // ..
       });
   });

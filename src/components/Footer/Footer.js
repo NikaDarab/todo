@@ -2,7 +2,7 @@ let Footer = () => {
   return (
     <>
       <footer id="footer">
-        <ul class="copyright">
+        <ul className="copyright">
           <li>&copy; NikaDarab</li>
         </ul>
       </footer>

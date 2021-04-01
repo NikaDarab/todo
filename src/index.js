@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { TaskProvider } from "./contexts/Task";
 import { AuthProvider } from "./contexts/Auth";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>

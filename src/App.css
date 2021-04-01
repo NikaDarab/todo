@@ -8,8 +8,71 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100%;
 }
+
+form {
+  display: block;
+  width: 100%;
+  padding: 2em;
+}
+h2 {
+  width: 100%;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 0.75em 1em 0.75em 1.5em;
+  box-shadow: inset 0px 1px 1px fadeout(white, 95%);
+
+  margin: 0;
+  font-weight: 200;
+}
+.btn-log {
+  display: inline-block;
+  background-color: dodgerblue;
+  border: none;
+  padding: 0.5em 2em;
+  color: black;
+  margin-right: 0.5em;
+  box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+}
+
+.btn-create {
+  display: inline-block;
+  background: rgb(34, 255, 0);
+  border: none;
+  padding: 0.5em 2em;
+  color: black;
+  margin-right: 0.5em;
+  box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+}
+.btn:hover {
+  background: lighten(blue, 5%);
+}
+.btn :active {
+  background: blue;
+  box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+}
+.btn:focus {
+  outline: none;
+}
+.login-form {
+  margin: 10% 0;
+}
+
+input {
+  margin: auto auto;
+  width: 10%;
+  margin-bottom: 2em;
+  padding: 0.5em 0;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.25em;
+  color: #757575;
+}
+:focus {
+  outline: none;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -63,9 +126,6 @@ td {
   background-color: rgb(216, 97, 50);
   border: 1px solid #ddd;
 }
-.form-inline button:hover {
-  background-color: royalblue;
-}
 
 li {
   display: inline-block;
@@ -82,7 +142,9 @@ li {
   height: 40vmin;
   pointer-events: none;
 }
-
+.login-input {
+  width: 30%;
+}
 #root {
   width: 100%;
 }
@@ -122,6 +184,10 @@ li {
   button {
     font-size: 10px;
   }
+  .login-input {
+    margin: 10px 0;
+    width: 80%;
+  }
 }
 
 .App-header {
@@ -142,4 +208,37 @@ li {
   to {
     transform: rotate(360deg);
   }
+}
+#footer {
+  align-self: flex-end;
+  width: 100%;
+  padding: 1.5em 0 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: default;
+  text-align: center;
+}
+
+#footer .copyright {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  list-style: none;
+}
+
+#footer .copyright li {
+  display: inline-block;
+
+  margin: 0 0 0 0.45em;
+
+  padding: 0 0 0 0.85em;
+
+  border-left: solid 1px rgba(255, 255, 255, 0.5);
+
+  line-height: 1;
+
+  color: black;
+}
+
+#footer .copyright li:first-child {
+  border-left: 0;
 }

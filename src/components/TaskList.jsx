@@ -70,7 +70,11 @@ function TaskList() {
           style={{ padding: "0 100px" }}
           onClick={() => setNewTask(!newTask)}
         >
-          {!newTask && <i className="fas fa-plus fa-2x add"></i>}{" "}
+          {!newTask ? (
+            <i className="fas fa-plus fa-2x add"></i>
+          ) : (
+            <i class="fas fa-times fa-2x"></i>
+          )}
         </div>
         <div style={{ padding: "0 100px" }} onClick={() => setList(!showList)}>
           {!showList ? (
@@ -138,6 +142,7 @@ function TaskList() {
                   <td>{task.task.name}</td>
                   <td>
                     <input
+                      style={{ margin: "12px 0" }}
                       type="checkbox"
                       checked={task.task.completed}
                       onChange={() => updateCompleted(task)}

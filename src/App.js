@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import AuthContext from "./contexts/Auth";
 import TaskList from "./components/TaskList";
 import Login from "./components/Login";
 import Header from "./components/Header.js/Header";
-import Routes from "../src/components/Route/Route";
+import Footer from "../src/components/Footer/Footer";
 
 function App() {
   const { user, checkForUser } = useContext(AuthContext);
@@ -15,8 +14,8 @@ function App() {
   return (
     <>
       <Header />
-
       <div className="App">{user ? <TaskList /> : <Login />}</div>
+      <Footer />
     </>
   );
 }

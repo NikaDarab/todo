@@ -15,10 +15,16 @@ export const TaskProvider = ({ children }) => {
 
   async function addTask(task) {
     await fbAddTask(task).then(() => {
+      setTasks([
+        ...tasks,
+        {
+          task,
+          complete: false,
+        },
+      ]);
+
       // console.log([tasks]);
       //todo: add the new task you just created to the tasks state
-
-      setTasks(() => [...tasks]);
     });
   }
 

@@ -12,9 +12,7 @@ function TaskList() {
   };
   const [newTask, setNewTask] = useState(false);
   const [task, setTask] = useState(emptyTask);
-  const { tasks, addTask, updateTask, getTasks, deleteTask } = useContext(
-    TaskContext
-  );
+  const { tasks, addTask, updateTask, getTasks } = useContext(TaskContext);
 
   useEffect(() => {
     getTasks(user.uid);

@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AuthContext from "../../contexts/Auth";
 
 let Header = () => {
+  const { user, logout } = useContext(AuthContext);
   return (
     <>
-      <header className="header">
-        <nav>
+      <header className="App-header">
+        <h1>
           <li>TODO</li>
-          <li style={{ float: "right" }}>Logout</li>
-          <li style={{ float: "right" }}>Login</li>
-        </nav>
+
+          <li className="auth-link" onClick={logout}>
+            {user ? "Logout" : "Sign up/Login"}
+          </li>
+        </h1>
       </header>
     </>
   );

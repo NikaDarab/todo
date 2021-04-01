@@ -11,6 +11,7 @@ function TaskList() {
     uid: user.uid,
   };
   const [newTask, setNewTask] = useState(false);
+  const [showList, setList] = useState(false);
   const [task, setTask] = useState(emptyTask);
   let { tasks, addTask, updateTask, getTasks, deleteTask } = useContext(
     TaskContext
@@ -63,74 +64,98 @@ function TaskList() {
   };
 
   return (
-    <div className="TaskList ">
-      <button
-        onClick={() => {
-          setNewTask(!newTask);
-        }}
-      >
-        +
-      </button>
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Name</th>
-            <th>Completed</th>
-          </tr>
-        </thead>
-        <tbody>
-          {newTask && (
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  defaultValue={task.category}
-                  onChange={handleCategoryChange}
-                  name="category"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  defaultValue={task.name}
-                  onChange={handleNameChange}
-                  name="name"
-                />
-              </td>
-              <td>
-                <button
-                  disabled={
-                    task.name.length === 0 || task.category.length === 0
-                      ? true
-                      : false
-                  }
-                  onClick={saveTask}
-                >
-                  save
-                </button>{" "}
-                <br />
-                <button onClick={cancelTask}>cancel</button>
-              </td>
-            </tr>
+    <div className="TaskList">
+      <div className="add-btn">
+        <div
+          style={{ padding: "0 100px" }}
+          onClick={() => setNewTask(!newTask)}
+        >
+          {!newTask && <i className="fas fa-plus fa-2x add"></i>}{" "}
+        </div>
+        <div style={{ padding: "0 100px" }} onClick={() => setList(!showList)}>
+          {!showList ? (
+            <i class="fas fa-eye fa-2x add"></i>
+          ) : (
+            <i class="fas fa-eye-slash fa-2x"></i>
           )}
-          {tasks.map((task) => (
-            <tr key={task.id}>
-              <td>{task.task.category}</td>
-              <td>{task.task.name}</td>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={task.task.completed}
-                  onChange={() => updateCompleted(task)}
-                />
-                <button onClick={() => handleDelete(task.id)}>delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <button onClick={logout}>Logout</button>
+        </div>
+      </div>
+      {/* <i class="fas fa-eye fa-2x add"></i> */}
+
+      <div>
+        {newTask && (
+          <div className="form-inline">
+            <label htmlFor="category">category</label>
+            <input
+              type="text"
+              value={task.category}
+              onChange={handleCategoryChange}
+              name="category"
+              required
+            />
+            <label htmlFor="name">name</label>
+            <input
+              type="text"
+              value={task.name}
+              onChange={handleNameChange}
+              name="name"
+              required
+            />
+            <button
+              className="button-save"
+              disabled={
+                task.name.length === 0 || task.category.length === 0
+                  ? true
+                  : false
+              }
+              onClick={saveTask}
+            >
+              save
+            </button>{" "}
+            <br />
+            <button className="button-delete" onClick={cancelTask}>
+              cancel
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="table">
+        {!showList && (
+          <table>
+            <>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Name</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+            </>
+            <tbody>
+              {tasks.map((task) => (
+                <tr key={task.id}>
+                  <td>{task.task.category}</td>
+                  <td>{task.task.name}</td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={task.task.completed}
+                      onChange={() => updateCompleted(task)}
+                    />
+                  </td>
+                  <td>
+                    <div onClick={() => handleDelete(task.id)}>
+                      <i className="fas fa-trash"></i>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+
+      {/* <button onClick={logout}>Logout</button> */}
     </div>
   );
 }

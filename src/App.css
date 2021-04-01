@@ -1,25 +1,78 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
 
-* {
+html,
+body {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   line-height: 2;
   letter-spacing: 0.2em;
-  background-color: black;
-  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+tr,
+th,
+td {
+  border: 1px;
+  padding: 0 30px;
+  text-align: center;
 }
 
-.header {
-  margin: 10px 5px;
-  font-size: 20px;
-  font-weight: 700;
+.add-btn {
+  padding: 10% 0 0 0;
+  display: flex;
+  justify-content: center;
 }
+.table {
+  display: flex;
+  justify-content: center;
+  margin: 4% 10%;
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0 0 0;
+}
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.form-inline button {
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 100%;
+  color: white;
+}
+.button-save {
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+}
+.button-delete {
+  background-color: rgb(216, 97, 50);
+  border: 1px solid #ddd;
+}
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
 li {
   display: inline-block;
   padding: 0 10px;
 }
-
-.columns {
-  padding: 0 20px;
+.auth-link {
+  float: right;
 }
 .App {
   text-align: center;
@@ -30,22 +83,52 @@ li {
   pointer-events: none;
 }
 
+#root {
+  width: 100%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 10p;
+  }
+  tr,
+  th,
+  td {
+    padding: 0 5px;
+  }
+  .form-inline input {
+    margin: 10px 0;
+    align-items: stretch;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10% 0;
+  }
+  header {
+    font-size: 10px;
+  }
+  .add-btn {
+    margin: 10% 0 0 0;
+  }
+  .add-see {
+    padding: 0 100px;
+  }
+  button {
+    font-size: 10px;
+  }
+}
 
 .App-header {
-  /* background-color: #000308; */
-  /* min-height: 100vh; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  /* color: white; */
+  background-color: #282c34;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
 .App-link {

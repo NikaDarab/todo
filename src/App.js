@@ -5,6 +5,8 @@ import TaskList from "./components/TaskList";
 import Login from "./components/Login";
 import Header from "./components/Header.js/Header";
 import Footer from "../src/components/Footer/Footer";
+import Register from "../src/components/Register";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   const { user, checkForUser } = useContext(AuthContext);
@@ -14,8 +16,10 @@ function App() {
   return (
     <>
       <Header />
-      {/* {console.log(process.env.REACT_APP_WEATHER_API_KEY)} */}
-      <div className="App">{user ? <TaskList /> : <Login />}</div>
+
+      <Route exact path="/register" component={Register} />
+
+      <div className="App">{user ? <TaskList /> : <Register />}</div>
       <Footer />
     </>
   );

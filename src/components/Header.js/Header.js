@@ -10,7 +10,7 @@ let Header = () => {
           <li>TODO</li>
 
           <li className="auth-link" onClick={logout}>
-            {user ? "Logout" : "Sign up/Login"}
+            {user ? "Logout" : "Sign up"}
           </li>
         </h1>
       </header>

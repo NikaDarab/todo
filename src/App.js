@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-
+      {/* {console.log(process.env.REACT_APP_WEATHER_API_KEY)} */}
       <div className="App">{user ? <TaskList /> : <Login />}</div>
       <Footer />
     </>

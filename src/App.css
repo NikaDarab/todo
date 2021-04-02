@@ -50,6 +50,26 @@ h2 {
   margin-right: 0.5em;
   box-shadow: inset 0px 1px 0px fadeout(white, 80%);
 }
+
+.landing-btns {
+  display: flex;
+  justify-content: center;
+}
+.land-btn {
+  font-size: 30px;
+}
+.intro {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  font-size: 20px;
+}
+.intro.none {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 20px;
+}
 .btn:hover {
   background: lighten(blue, 5%);
 }
@@ -195,6 +215,20 @@ li {
   }
   .task-input {
     width: 100%;
+  }
+  .landing-btns {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+  }
+  .land-btn {
+    font-size: 20px;
+  }
+  .intro {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    font-size: 20px;
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import AuthContext from "../contexts/Auth";
 
-const Login = () => {
+const Login = (props) => {
   const { login, createAccount } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +9,8 @@ const Login = () => {
   return (
     <div className="login-form">
       <div style={{ display: "flex", justifyContent: "center" }}>
-        {createAccount ? "Create Account" : "Login"}
+        {/* {createAccount ? "Create Account" : "Login"} */}
+        Log in
       </div>
       <div>
         <input
@@ -31,13 +32,19 @@ const Login = () => {
       <button className="btn-log" onClick={() => login(email, password)}>
         Login
       </button>
-
       <button
+        className="button-delete btn-create "
+        onClick={() => props.setLogin(!props.login)}
+      >
+        Cancel
+      </button>
+
+      {/* <button
         className="btn-create"
         onClick={() => createAccount(email, password)}
       >
         Create Account
-      </button>
+      </button> */}
     </div>
   );
 };

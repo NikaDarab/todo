@@ -7,6 +7,7 @@ import Header from "./components/Header.js/Header";
 import Footer from "../src/components/Footer/Footer";
 import Register from "../src/components/Register";
 import { Route, Switch } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const { user, checkForUser } = useContext(AuthContext);
@@ -19,7 +20,8 @@ function App() {
 
       <Route exact path="/register" component={Register} />
 
-      <div className="App">{user ? <TaskList /> : <Register />}</div>
+      {/* <div className="App">{user ? <TaskList /> : <Register />}</div> */}
+      <div className="App">{user ? <TaskList /> : <LandingPage />}</div>
       <Footer />
     </>
   );

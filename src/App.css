@@ -16,7 +16,8 @@ form {
   width: 100%;
   padding: 2em;
 }
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   font-size: inherit;
 }
 h2 {

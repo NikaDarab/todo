@@ -17,7 +17,7 @@ let LandingPage = () => {
           style={{ display: register || login ? "none" : "inline-block" }}
           onClick={() => setRegister(!register)}
         >
-          Sign Up
+          Sign up
         </button>
         <button
           style={{ display: login || register ? "none" : "inline-block" }}

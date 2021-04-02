@@ -188,6 +188,9 @@ li {
     margin: 10px 0;
     width: 80%;
   }
+  .task-input {
+    width: 100%;
+  }
 }
 
 .App-header {

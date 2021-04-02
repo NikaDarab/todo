@@ -95,6 +95,7 @@ function TaskList() {
               onChange={handleCategoryChange}
               name="category"
               required
+              className="task-input"
             />
             <label htmlFor="name">name</label>
             <input
@@ -103,6 +104,7 @@ function TaskList() {
               onChange={handleNameChange}
               name="name"
               required
+              className="task-input"
             />
             <button
               className="button-save"

@@ -107,12 +107,17 @@ function TaskList() {
               className="task-input"
             />
             <button
-              className="button-save"
               disabled={
                 task.name.length === 0 || task.category.length === 0
                   ? true
                   : false
               }
+              style={{
+                backgroundColor:
+                  task.name.length && task.category.length
+                    ? "dodgerblue"
+                    : null,
+              }}
               onClick={saveTask}
             >
               save

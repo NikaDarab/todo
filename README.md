@@ -12,7 +12,6 @@ Firebase, FireStor and React.js
 
 ## Screenshots
 
-![Screen Shot 2021-04-01 at 6 30 43 PM](https://user-images.githubusercontent.com/43226446/113364190-7b2d5a00-9318-11eb-938f-306be09ce4c9.png)
 ![Screen Shot 2021-04-01 at 6 30 11 PM](https://user-images.githubusercontent.com/43226446/113364193-7cf71d80-9318-11eb-9550-914404325bef.png)
 ![Screen Shot 2021-04-01 at 6 30 25 PM](https://user-images.githubusercontent.com/43226446/113364196-7e284a80-9318-11eb-9273-c8a1285c41c3.png)
 

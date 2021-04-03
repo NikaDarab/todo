@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import AuthContext from "../contexts/Auth";
+import React, { useState } from "react";
+// import AuthContext from "../contexts/Auth";
 
 const Login = (props) => {
-  const { login, createAccount } = useContext(AuthContext);
+  // const { login, createAccount } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,7 +32,6 @@ const Login = (props) => {
         className={props.className}
         onClick={() => props.authorize(email, password)}
       >
-        {console.log(props.button)}
         {props.button}
       </button>
 

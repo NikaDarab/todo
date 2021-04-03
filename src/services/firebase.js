@@ -1,5 +1,4 @@
 import firebase from "firebase";
-import { apiKey } from "..";
 require("firebase/firestore");
 
 var firebaseConfig = {
@@ -28,7 +27,7 @@ export const fbCreateAccount = async (email, password) => {
       })
       .catch((error) => {
         var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorMessage = error.message;
         alert(errorCode);
       });
   });
@@ -44,7 +43,7 @@ export const fbLogin = async (email, password) => {
       })
       .catch((error) => {
         var errorCode = error.code;
-        var errorMessage = error.message;
+        // var errorMessage = error.message;
 
         alert(errorCode);
         // ..

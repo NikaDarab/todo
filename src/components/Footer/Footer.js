@@ -3,7 +3,7 @@ let Footer = () => {
     <>
       <footer id="footer">
         <ul className="copyright">
-          <li>&copy; 2021NikaDarab</li>
+          <li>&copy; 2021 NikaDarab</li>
         </ul>
       </footer>
     </>

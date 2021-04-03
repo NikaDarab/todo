@@ -9,8 +9,7 @@ const Login = (props) => {
   return (
     <div className="login-form">
       <div style={{ display: "flex", justifyContent: "center" }}>
-        {/* {createAccount ? "Create Account" : "Login"} */}
-        Log in
+        {props.button}
       </div>
       <div>
         <input
@@ -29,22 +28,20 @@ const Login = (props) => {
         />
       </div>
 
-      <button className="btn-log" onClick={() => login(email, password)}>
-        Login
+      <button
+        className="btn-log"
+        onClick={() => props.authorize(email, password)}
+      >
+        {console.log(props.button)}
+        {props.button}
       </button>
+
       <button
         className="button-delete btn-create "
         onClick={() => props.setLogin(!props.login)}
       >
         Cancel
       </button>
-
-      {/* <button
-        className="btn-create"
-        onClick={() => createAccount(email, password)}
-      >
-        Create Account
-      </button> */}
     </div>
   );
 };

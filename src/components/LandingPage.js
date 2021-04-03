@@ -48,6 +48,7 @@ let LandingPage = () => {
             setLogin={setLogin}
             button={button}
             title={button}
+            className={"btn-log"}
           />
         </>
       ) : register ? (
@@ -57,6 +58,7 @@ let LandingPage = () => {
           setLogin={setRegister}
           button={button}
           title={button}
+          className={"btn-create"}
         />
       ) : null}
     </>

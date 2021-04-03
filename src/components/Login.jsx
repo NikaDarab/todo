@@ -29,7 +29,7 @@ const Login = (props) => {
       </div>
 
       <button
-        className="btn-log"
+        className={props.className}
         onClick={() => props.authorize(email, password)}
       >
         {console.log(props.button)}

@@ -1,14 +1,24 @@
-# ToDo
+# ToDo App
 
 Live app: https://todo-nikadarab.netlify.app/
 
 ## Summary
 
-Simple todo list built on React.js, using react hooks and context and FireBase and FireStore for authentication and database.
+This is a todo list built on React.js, using react hooks and context and FireBase and FireStore for authentication and database.
+
+## User Stories
+
+- A user can create an account and/or login
+- A logged in user can view,add,complete and delete the list items of the todo list.
+- A user can log out.
 
 ## Technologies used
 
-Firebase, FireStor and React.js
+Firebase, FireStor and React.js and React hooks.
+
+## What I Learned
+
+I had to learn hooks for this project and it was incredibly intuitive and easy to learn.
 
 ## Screenshots
 
